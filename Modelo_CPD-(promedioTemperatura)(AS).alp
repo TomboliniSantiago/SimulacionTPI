@@ -2501,7 +2501,7 @@ else return 0;]]></Body>
 						<Code><![CDATA[1]]></Code>
 						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
 					</RecurrenceCode>
-					<Value><![CDATA[promTempA]]></Value>
+					<Value><![CDATA[promTempAAS]]></Value>
 					<NumberOfIntervals>10</NumberOfIntervals>
 					<MinMaxAutodetect>true</MinMaxAutodetect>
 					<RangeMinExpression><![CDATA[0]]></RangeMinExpression>
@@ -2509,13 +2509,13 @@ else return 0;]]></Body>
 					<InitialIntervalSize><![CDATA[0.1]]></InitialIntervalSize>
 					<CalculateCDF>true</CalculateCDF>
 					<CalculatePercentiles>true</CalculatePercentiles>
-					<LowPercent>10</LowPercent>
-					<HighPercent>10</HighPercent>
+					<LowPercent>25</LowPercent>
+					<HighPercent>75</HighPercent>
 					<Title><![CDATA[]]></Title>
 				</HistogramData>
     			<HistogramData>
 					<Id>1699474664855</Id>
-					<Name><![CDATA[data]]></Name>
+					<Name><![CDATA[queueSize]]></Name>
 					<X>420</X><Y>1190</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -2564,7 +2564,7 @@ else return 0;]]></Body>
 						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
 					</RecurrenceCode>
 					<Discrete>true</Discrete>
-					<ValueCode><![CDATA[promTempA]]></ValueCode>
+					<ValueCode><![CDATA[promTempAAS]]></ValueCode>
 				</Statistics>
     			<Statistics>
 					<Id>1699475007622</Id>
