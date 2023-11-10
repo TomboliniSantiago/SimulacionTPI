@@ -569,8 +569,7 @@
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[7
-]]></Code>
+							<Code><![CDATA[10]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1584464435065</Id>
@@ -1795,6 +1794,7 @@
 					</Properties>
 					<Action><![CDATA[encender.inject(Aencender());
 ]]></Action>
+					<Logging>false</Logging>
 				</Event>
 				<Event>
 					<Id>1584465426156</Id>
@@ -1826,6 +1826,7 @@
 						<Condition><![CDATA[false]]></Condition>
 					</Properties>
 					<Action><![CDATA[Apagar.inject(Aapagar())]]></Action>
+					<Logging>false</Logging>
 				</Event>
 				<Event>
 					<Id>1584550210852</Id>
@@ -1868,6 +1869,7 @@ T7=T7+0.001*(1/Kt)*(cp_qa*(Tc-T7)+p7());
 T8=T8+0.001*(1/Kt)*(cp_qa*(Tc-T8)+p8());
 T9=T9+0.001*(1/Kt)*(cp_qa*(Tc-T9)+p9());
 T10=T10+0.001*(1/Kt)*(cp_qa*(Tc-T10)+p10());]]></Action>
+					<Logging>false</Logging>
 				</Event>
 				<Event>
 					<Id>1696693873919</Id>
@@ -1899,6 +1901,7 @@ T10=T10+0.001*(1/Kt)*(cp_qa*(Tc-T10)+p10());]]></Action>
 						<Condition><![CDATA[false]]></Condition>
 					</Properties>
 					<Action><![CDATA[consumoEnergetico = consumoEnergetico + ((P()+PCRAC())/3600000);]]></Action>
+					<Logging>false</Logging>
 				</Event>
 				<Event>
 					<Id>1696718601522</Id>
@@ -1947,6 +1950,7 @@ T10=T10+0.001*(1/Kt)*(cp_qa*(Tc-T10)+p10());]]></Action>
 else if(queue.size() <= 2 && encendidos > 0){
 	encendidos-=1;
 	}]]></Action>
+					<Logging>false</Logging>
 				</Event>
 				<Event>
 					<Id>1696866583847</Id>
@@ -2020,6 +2024,7 @@ if(on10()==1){
 	sumaTempA = sumaTempA + T10;
 }
 promTempAAS = sumaTempA/cont;]]></Action>
+					<Logging>false</Logging>
 				</Event>
 				<Event>
 					<Id>1696867424463</Id>
@@ -2054,6 +2059,7 @@ promTempAAS = sumaTempA/cont;]]></Action>
 sumaTempAyA = T1+T2+T3+T4+T5+T6+T7+T8+T9+T10;
 promTempAyA = sumaTempAyA/10;
 ]]></Action>
+					<Logging>false</Logging>
 				</Event>
 			</Events>
 			<Functions>
@@ -2485,7 +2491,7 @@ else return 0;]]></Body>
     			<HistogramData>
 					<Id>1699474307629</Id>
 					<Name><![CDATA[promTempData]]></Name>
-					<X>1070</X><Y>1230</Y>
+					<X>840</X><Y>1190</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2516,7 +2522,7 @@ else return 0;]]></Body>
     			<HistogramData>
 					<Id>1699474664855</Id>
 					<Name><![CDATA[queueSize]]></Name>
-					<X>420</X><Y>1190</Y>
+					<X>840</X><Y>1250</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2546,8 +2552,8 @@ else return 0;]]></Body>
 				</HistogramData>
     			<Statistics>
 					<Id>1699474666461</Id>
-					<Name><![CDATA[statistics]]></Name>
-					<X>690</X><Y>1230</Y>
+					<Name><![CDATA[promedioTemp]]></Name>
+					<X>840</X><Y>1220</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2563,12 +2569,12 @@ else return 0;]]></Body>
 						<Code><![CDATA[1]]></Code>
 						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
 					</RecurrenceCode>
-					<Discrete>true</Discrete>
+					<Discrete>false</Discrete>
 					<ValueCode><![CDATA[promTempAAS]]></ValueCode>
 				</Statistics>
     			<Statistics>
 					<Id>1699475007622</Id>
-					<Name><![CDATA[statistics1]]></Name>
+					<Name><![CDATA[consumoKWs]]></Name>
 					<X>250</X><Y>1210</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -2585,7 +2591,8 @@ else return 0;]]></Body>
 						<Code><![CDATA[1]]></Code>
 						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
 					</RecurrenceCode>
-					<Discrete>true</Discrete>
+					<Discrete>false</Discrete>
+					<ValueCode><![CDATA[((P()+PCRAC())/3600)]]></ValueCode>
 				</Statistics>
 			</AnalysisData>
 			<AgentLinks>
@@ -2812,6 +2819,7 @@ else return 0;]]></Body>
 					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
 					<QuantityColumn>
 					</QuantityColumn>
+					<Logging>false</Logging>
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>1583942540417</Id>
@@ -2938,6 +2946,7 @@ promedioClientesEnEspera = clientesEsperaActual/time();]]></Code>
 					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
 					<QuantityColumn>
 					</QuantityColumn>
+					<Logging>false</Logging>
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>1583942570133</Id>
@@ -3013,6 +3022,7 @@ promedioClientesEnEspera = clientesEsperaActual/time();]]></Code>
 					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
 					<QuantityColumn>
 					</QuantityColumn>
+					<Logging>false</Logging>
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>1583942683312</Id>
@@ -3085,6 +3095,7 @@ promedioClientesEnEspera = clientesEsperaActual/time();]]></Code>
 					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
 					<QuantityColumn>
 					</QuantityColumn>
+					<Logging>false</Logging>
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>1583942686978</Id>
@@ -3157,6 +3168,7 @@ promedioClientesEnEspera = clientesEsperaActual/time();]]></Code>
 					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
 					<QuantityColumn>
 					</QuantityColumn>
+					<Logging>false</Logging>
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>1583942692957</Id>
@@ -3257,6 +3269,7 @@ promedioClientesEnEspera = clientesEsperaActual/time();]]></Code>
 					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
 					<QuantityColumn>
 					</QuantityColumn>
+					<Logging>false</Logging>
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>1583942695980</Id>
@@ -3357,6 +3370,7 @@ promedioClientesEnEspera = clientesEsperaActual/time();]]></Code>
 					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
 					<QuantityColumn>
 					</QuantityColumn>
+					<Logging>false</Logging>
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>1583942705403</Id>
@@ -3423,6 +3437,7 @@ promedioClientesEnEspera = clientesEsperaActual/time();]]></Code>
 					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
 					<QuantityColumn>
 					</QuantityColumn>
+					<Logging>false</Logging>
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>1583942708004</Id>
@@ -3489,6 +3504,7 @@ promedioClientesEnEspera = clientesEsperaActual/time();]]></Code>
 					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
 					<QuantityColumn>
 					</QuantityColumn>
+					<Logging>false</Logging>
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>1583943061207</Id>
@@ -3661,6 +3677,7 @@ promedioClientesEnEspera = clientesEsperaActual/time();]]></Code>
 					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
 					<QuantityColumn>
 					</QuantityColumn>
+					<Logging>false</Logging>
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>1583943061224</Id>
@@ -3899,6 +3916,7 @@ promedioClientesEnEspera = clientesEsperaActual/time();]]></Code>
 					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
 					<QuantityColumn>
 					</QuantityColumn>
+					<Logging>false</Logging>
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>1584377636035</Id>
@@ -4137,6 +4155,7 @@ promedioClientesEnEspera = clientesEsperaActual/time();]]></Code>
 					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
 					<QuantityColumn>
 					</QuantityColumn>
+					<Logging>false</Logging>
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>1584377645381</Id>
@@ -4375,6 +4394,7 @@ promedioClientesEnEspera = clientesEsperaActual/time();]]></Code>
 					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
 					<QuantityColumn>
 					</QuantityColumn>
+					<Logging>false</Logging>
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>1584377653894</Id>
@@ -4613,6 +4633,7 @@ promedioClientesEnEspera = clientesEsperaActual/time();]]></Code>
 					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
 					<QuantityColumn>
 					</QuantityColumn>
+					<Logging>false</Logging>
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>1584377663512</Id>
@@ -4851,6 +4872,7 @@ promedioClientesEnEspera = clientesEsperaActual/time();]]></Code>
 					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
 					<QuantityColumn>
 					</QuantityColumn>
+					<Logging>false</Logging>
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>1584377671840</Id>
@@ -5089,6 +5111,7 @@ promedioClientesEnEspera = clientesEsperaActual/time();]]></Code>
 					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
 					<QuantityColumn>
 					</QuantityColumn>
+					<Logging>false</Logging>
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>1584377682431</Id>
@@ -5327,6 +5350,7 @@ promedioClientesEnEspera = clientesEsperaActual/time();]]></Code>
 					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
 					<QuantityColumn>
 					</QuantityColumn>
+					<Logging>false</Logging>
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>1584377698732</Id>
@@ -5588,6 +5612,7 @@ promedioClientesEnEspera = clientesEsperaActual/time();]]></Code>
 					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
 					<QuantityColumn>
 					</QuantityColumn>
+					<Logging>false</Logging>
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>1584378221698</Id>
@@ -5691,6 +5716,7 @@ promedioClientesEnEspera = clientesEsperaActual/time();]]></Code>
 					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
 					<QuantityColumn>
 					</QuantityColumn>
+					<Logging>false</Logging>
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>1584378233659</Id>
@@ -5757,6 +5783,7 @@ promedioClientesEnEspera = clientesEsperaActual/time();]]></Code>
 					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
 					<QuantityColumn>
 					</QuantityColumn>
+					<Logging>false</Logging>
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>1584378284938</Id>
@@ -5823,6 +5850,7 @@ promedioClientesEnEspera = clientesEsperaActual/time();]]></Code>
 					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
 					<QuantityColumn>
 					</QuantityColumn>
+					<Logging>false</Logging>
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>1584378289701</Id>
@@ -5926,6 +5954,7 @@ promedioClientesEnEspera = clientesEsperaActual/time();]]></Code>
 					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
 					<QuantityColumn>
 					</QuantityColumn>
+					<Logging>false</Logging>
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>1584378293882</Id>
@@ -6121,6 +6150,7 @@ promedioClientesEnEspera = clientesEsperaActual/time();]]></Code>
 					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
 					<QuantityColumn>
 					</QuantityColumn>
+					<Logging>false</Logging>
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>1584537771169</Id>
@@ -6238,6 +6268,7 @@ promedioTiempoServidorOcupado = tiempoOcupado/time();]]></Code>
 					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
 					<QuantityColumn>
 					</QuantityColumn>
+					<Logging>false</Logging>
 				</EmbeddedObject>
 			</EmbeddedObjects>
 
@@ -6320,6 +6351,7 @@ promedioTiempoServidorOcupado = tiempoOcupado/time();]]></Code>
 						<Code><![CDATA[1]]></Code>
 						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
 					</RecurrenceCode>
+					<Logging>false</Logging>
 					<EmbeddedIcon>false</EmbeddedIcon>
 					<Width>800</Width>
 					<Height>350</Height>
@@ -8258,6 +8290,7 @@ promedioTiempoServidorOcupado = tiempoOcupado/time();]]></Code>
 						<Code><![CDATA[1]]></Code>
 						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
 					</RecurrenceCode>
+					<Logging>false</Logging>
 					<EmbeddedIcon>false</EmbeddedIcon>
 					<Width>490</Width>
 					<Height>260</Height>
@@ -8548,6 +8581,7 @@ promedioTiempoServidorOcupado = tiempoOcupado/time();]]></Code>
 						<Code><![CDATA[1]]></Code>
 						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
 					</RecurrenceCode>
+					<Logging>false</Logging>
 					<EmbeddedIcon>false</EmbeddedIcon>
 					<Width>260</Width>
 					<Height>210</Height>
@@ -8946,7 +8980,7 @@ promedioTiempoServidorOcupado = tiempoOcupado/time();]]></Code>
 			<Id>1699476199959</Id>
 			<Name><![CDATA[OptimizationCPD]]></Name>
 			<CommandLineArguments><![CDATA[]]></CommandLineArguments>
-			<MaximumMemory>512</MaximumMemory>
+			<MaximumMemory>2048</MaximumMemory>
 			<RandomNumberGenerationType>randomSeed</RandomNumberGenerationType>
 			<CustomGeneratorCode>new Random()</CustomGeneratorCode>
 			<BeforeEachExperimentRunCode><![CDATA[datasetCurrentObjective.reset();
@@ -10587,7 +10621,7 @@ copyToClipboard( s );]]></ActionCode>
 				<Id>1584464435067</Id>
 				<Type>DISCRETE</Type>
 				<Min Class="CodeValue">
-					<Code><![CDATA[1]]></Code>
+					<Code><![CDATA[5]]></Code>
 				</Min>
 				<Max Class="CodeValue">
 					<Code><![CDATA[10]]></Code>
@@ -10653,10 +10687,10 @@ copyToClipboard( s );]]></ActionCode>
 				<Id>1699476389143</Id>
 				<Type>CONTINUOUS</Type>
 				<Min Class="CodeValue">
-					<Code><![CDATA[50]]></Code>
+					<Code><![CDATA[60]]></Code>
 				</Min>
 				<Max Class="CodeValue">
-					<Code><![CDATA[78]]></Code>
+					<Code><![CDATA[73]]></Code>
 				</Max>
 			</Parameter>
 			<ObjectiveFunctionCode><![CDATA[root.promTempAAS]]></ObjectiveFunctionCode>
